@@ -28,7 +28,7 @@ const Register = () => {
         theme: "dark"
     }
     const handlevalidation = () => {
-        // console.log(values, "++++++++");
+        console.log(values, "++++++++");
         const { username, email, password, confirmPassword } = values
         if (password !== confirmPassword) {
             toast.error('password and confirm password do not match', toastObject)
@@ -54,7 +54,7 @@ const Register = () => {
         if (handlevalidation()) {
             const { password, username, email } = values
             const  {data}  = await axios.post(registerRouter, { username, email, password })
-            // console.log(data,"-------------------");
+            console.log(data,"-------------------");
             if(data?.status !== 201){
                 toast.error(data?.message, toastObject)
             }else{
