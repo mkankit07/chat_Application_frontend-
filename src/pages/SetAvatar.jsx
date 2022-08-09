@@ -32,10 +32,10 @@ const SetAvatar = () => {
             const user = await JSON.parse(
                 localStorage.getItem("chat-app-username")
             );
-            console.log((`${setAvatarRoute}/${user._id}`));
+            // console.log((`${setAvatarRoute}/${user._id}`));
             const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
                 image: imagess[selectedAvatar],});
-            console.log(data);
+            // console.log(data);
             if (data?.data) {
                 user.isAvatarImageSet = true;
                 user.avatarImage = data.data.image;

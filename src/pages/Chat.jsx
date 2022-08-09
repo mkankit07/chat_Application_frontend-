@@ -16,17 +16,17 @@ const Chat = () => {
             navigate("/login");
         }else{
             let data=localStorage.getItem("chat-app-username")
-            console.log(data,"ooooooooooooooooo");
+            // console.log(data,"ooooooooooooooooo");
             setCurrentuser(JSON.parse(data));
         }
     }, []);
-    console.log("+++++++++++++++++++++++++=", currentuser);
+    // console.log("+++++++++++++++++++++++++=", currentuser);
     useEffect(() => { 
         if(currentuser){
-            console.log("+++++++++++++++++++++++++-", currentuser);
+            // console.log("+++++++++++++++++++++++++-", currentuser);
             if(currentuser.isAvatarImageSet){
                 const data=axios.get(`${getAllUsersRouter}/${currentuser._id}`).then((data)=>{
-                    console.log(data);
+                    // console.log(data);
                     setContacts(data.data)
                 })
             

@@ -27,7 +27,7 @@ const Login = () => {
         theme: "dark"
     }
     const handlevalidation = () => {
-        console.log(values, "++++++++");
+        // console.log(values, "++++++++");
         const {  email, password} = values
          if (email.length < 3) {
             toast.error('Email should be at least 3 characters', toastObject)
@@ -48,7 +48,7 @@ const Login = () => {
         if (handlevalidation()) {
             const { password,  email } = values
             const  {data}  = await axios.post(loginRouter, {  email, password })
-            console.log(data,"-------------------");
+            // console.log(data,"-------------------");
             if(data?.status !== 200){
                 toast.error(data?.message, toastObject)
             }else{
